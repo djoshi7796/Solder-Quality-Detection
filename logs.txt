@@ -1,0 +1,12 @@
+14th May
+
+* Installations and initial stuff
+* Wrote a script to autocrop images 
+
+TODO:
+
+* Make code more generic, think of an object oriented structure
+* Figure out the size of the grid that we need! Maybe standardize, etc
+* Try out filters using OpenCV
+* Library to process circuit board images
+

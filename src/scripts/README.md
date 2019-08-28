@@ -15,7 +15,7 @@ The system is divided into three Python modules that are sequentially run from t
 
 (Should we mention any assumptions about data directory structure before running the code?)
 The project can be run by invoking the following command:  
-*bash project.sh </path /to/ circuit/ boards> -e(or --epochs) <epochs> -b(or --batch_size) <batch_size> --lr < learning_rate> --l1 <l1_regularizer> --l2 <l2_regularizer>*  
+`*bash project.sh </path /to/ circuit/ boards> -e(or --epochs) <epochs> -b(or --batch_size) <batch_size> --lr < learning_rate> --l1 <l1_regularizer> --l2 <l2_regularizer>*`
 It takes the path to circuit board images as a required argument. The rest of the arguments - preceded by either '-' or '--' - are optional arguments followed by their respective values. The default values for the following are:  
 epochs : 74  
 batch_size : 32  

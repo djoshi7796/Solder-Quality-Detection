@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+python Models-EXP11D.py
+#python Models-EXP11C.py

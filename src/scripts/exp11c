@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+for value in {4..10}
+do
+	echo $value
+	python Models-EXP11C-nocv.py
+done

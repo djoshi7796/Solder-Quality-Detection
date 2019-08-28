@@ -1,0 +1,85 @@
+#!/usr/bin/env bash
+#python Models-EXP13B.py
+#REFERENCE:http://mywiki.wooledge.org/BashFAQ/035
+# Initialize all the option variables.
+# This ensures we are not contaminated by variables from the environment.
+epochs=
+e_=
+b_=
+lr__=
+l1__=
+l2__=
+batch_size=
+lr=
+l1=
+l2=
+path="$1"
+
+while :; do
+    case $2 in
+        #-h|-\?|--help)
+        #    show_help    # Display a usage synopsis.
+        #    exit
+        #    ;;
+        -e|--epochs)       # Takes an option argument; ensure it has been specified.
+            if [ "$3" ]; then
+		e_="$2"
+                printf "flag is %s\n" $e_
+		epochs=$3
+                shift
+            else
+                die 'ERROR: "--file" requires a non-empty option argument.'
+            fi
+            ;;
+        -b|--batch_size)       # Takes an option argument; ensure it has been specified.
+            if [ "$3" ]; then
+                b_="$2"
+		batch_size=$3
+                shift
+            else
+                die 'ERROR: "--file" requires a non-empty option argument.'
+            fi
+            ;;
+        --lr)       # Takes an option argument; ensure it has been specified.
+            if [ "$3" ]; then
+                lr=$3
+                lr__="$2"
+		shift
+            else
+                die 'ERROR: "--file" requires a non-empty option argument.'
+            fi
+            ;;
+        --l1)       # Takes an option argument; ensure it has been specified.
+            if [ "$3" ]; then
+                l1=$3
+                l1__="$2"
+		shift
+            else
+                die 'ERROR: "--file" requires a non-empty option argument.'
+            fi
+            ;;
+        --l2)       # Takes an option argument; ensure it has been specified.
+            if [ "$3" ]; then
+                l2=$3
+                l2__="$2"
+		shift
+            else
+                die 'ERROR: "--file" requires a non-empty option argument.'
+            fi
+            ;;
+        --)              # End of all options.
+            shift
+            break
+            ;;
+        -?*)
+            printf 'WARN: Unknown option (ignored): %s\n' "$1" >&2
+            ;;
+        *)               # Default case: No more options, so break out of the loop.
+            break
+    esac
+
+    shift
+done
+python Preprocesssing-final.py $path
+python Models-final.py $path $e_ $epochs $b_ $batch_size $lr__ $lr $l1__ $l1 $l2__ $l2
+python html_try2.py

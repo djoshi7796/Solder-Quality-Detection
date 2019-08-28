@@ -2,11 +2,37 @@
 
 ## Overview
 
-## Modules
-### 1. Preprocessing
-### 2. Training
-### 3. Report generation
+### Introduction
+### Data Preprocessing
+### Deep Learning architecture 
+### 
 
+## Structure
+
+The system is divided into three Python modules that are sequentially run from the project.sh script
+
+### Run project.sh
+
+(Should we mention any assumptions about data directory structure before running the code?)
+The project can be run by invoking the following command:
+*bash project.sh </path /to/ circuit/ boards> -e(or --epochs) <epochs> -b(or --batch_size) <batch_size> --lr < learning_rate> --l1 <l1_regularizer> --l2 <l2_regularizer>*
+It takes the path to circuit board images as a required argument. The rest of the arguments - preceded by either '-' or '--' - are optional arguments followed by their respective values. The default values for the following are:
+epochs : 74
+batch_size : 32
+learning_rate : 0.01
+l1 : 0
+l2 : 0
+
+The above hyperparameters gave optimal results out of all the experiments that we conducted. However, the user is free to tune them directly through the command-line. 
+
+#### Preprocessing 
+The preprocessing script generates a CSV file with 'crop-path, label' pairs and saves it in *</path /to/ circuit/ boards>* 
+It also generates another CSV file 'CURRENT-DATA.csv' that records number of available circuit boards, positives and negatives for the current data. It saves this file in '../results/' folder, relative to the source folder
+
+#### Training
+This script takes in the data file, hyperparameters and trains the model. The default train:test split used is 80:20 (should we keep that as command-line argument?). It saves the loss and accuracy history in '../results/results.csv'. It also computes the precision, recall and stores it in 'METRICS.csv' in '../results/'. 
+
+#### Report generation
 ## System requirements
 ### Python modules
 * tensorflow 1.13.1
@@ -40,6 +66,4 @@ https://www.anaconda.com/distribution/
      * *conda install sklearn*
      * *conda install -c menpo opencv*
      
-### Hardware requirements
-
 ## Sample results

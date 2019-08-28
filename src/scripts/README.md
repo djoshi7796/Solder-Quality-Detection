@@ -54,7 +54,7 @@ https://www.anaconda.com/distribution/
    `conda create -n yourenvname python=x.x anaconda`  
    where x.x is the Python version you wish to use
 3. Install above libraries
-   - First switch to the environment you wwant to install everything in
+   - First switch to the environment you want to install everything in  
    `conda activate yourenvname`
    - Then install above packages in the new virtual environment  
 `conda install tensorflow-gpu  
@@ -64,6 +64,6 @@ conda install pandas
 conda install -c conda-forge matplotlib  
 conda install scipy  
 conda install sklearn  
-conda install -c menpo opencv'
+conda install -c menpo opencv`
      
 ## Sample results

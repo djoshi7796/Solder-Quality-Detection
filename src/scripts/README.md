@@ -30,7 +30,7 @@ https://www.anaconda.com/distribution/
    - First switch to the environment you wwant to install everything in
    *conda activate yourenvname*
    - Then install above packages in the new virtual environment
-   - * *conda install tensorflow-gpu* 
+    * *conda install tensorflow-gpu* 
 
 ### Hardware requirements
 

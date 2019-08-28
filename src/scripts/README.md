@@ -11,6 +11,7 @@
 ### Python modules
 * tensorflow 1.13.1
 * keras 2.2.4-tf
+* cudnn 
 * cv2 3.4.2
 * pandas 0.24.2
 * numpy 1.16.4
@@ -30,8 +31,15 @@ https://www.anaconda.com/distribution/
    - First switch to the environment you wwant to install everything in
    *conda activate yourenvname*
    - Then install above packages in the new virtual environment
-     * *conda install tensorflow-gpu* 
-
+     * *conda install tensorflow-gpu*
+        (The above command also installs compatible version of keras and cudnn) 
+     * *conda install numpy*
+     * *conda install pandas*
+     * *conda install -c conda-forge matplotlib*
+     * *conda install scipy*
+     * *conda install sklearn*
+     * *conda install -c menpo opencv*
+     
 ### Hardware requirements
 
 ## Sample results

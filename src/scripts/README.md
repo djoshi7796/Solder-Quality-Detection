@@ -14,19 +14,18 @@ The system is divided into three Python modules that are sequentially run from t
 ### Run project.sh
 
 (Should we mention any assumptions about data directory structure before running the code?)
-The project can be run by invoking the following command:
-*bash project.sh </path /to/ circuit/ boards> -e(or --epochs) <epochs> -b(or --batch_size) <batch_size> --lr < learning_rate> --l1 <l1_regularizer> --l2 <l2_regularizer>*
-It takes the path to circuit board images as a required argument. The rest of the arguments - preceded by either '-' or '--' - are optional arguments followed by their respective values. The default values for the following are:
-epochs : 74
-batch_size : 32
-learning_rate : 0.01
-l1 : 0
-l2 : 0
-
-The above hyperparameters gave optimal results out of all the experiments that we conducted. However, the user is free to tune them directly through the command-line. 
-
+The project can be run by invoking the following command:  
+*bash project.sh </path /to/ circuit/ boards> -e(or --epochs) <epochs> -b(or --batch_size) <batch_size> --lr < learning_rate> --l1 <l1_regularizer> --l2 <l2_regularizer>*  
+It takes the path to circuit board images as a required argument. The rest of the arguments - preceded by either '-' or '--' - are optional arguments followed by their respective values. The default values for the following are:  
+epochs : 74  
+batch_size : 32  
+learning_rate : 0.01  
+l1 : 0  
+l2 : 0  
+  
+The above hyperparameters gave optimal results out of all the experiments that we conducted. However, the user is free to tune them directly through the command-line.   
 #### Preprocessing 
-The preprocessing script generates a CSV file with 'crop-path, label' pairs and saves it in *</path /to/ circuit/ boards>* 
+The preprocessing script generates a CSV file with 'crop-path, label' pairs and saves it in *</path /to/ circuit/ boards>*.  
 It also generates another CSV file 'CURRENT-DATA.csv' that records number of available circuit boards, positives and negatives for the current data. It saves this file in '../results/' folder, relative to the source folder
 
 #### Training

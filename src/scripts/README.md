@@ -25,9 +25,9 @@ The system is divided into three Python modules - preprocessing, training, repor
 
 (Should we mention any assumptions about data directory structure before running the code?)
 The project can be run by invoking the following command:  
-`*chmod +x project*'
+`*chmod +x project*`  
 `*./project </path /to/ circuit/ boards> -e(or --epochs) <epochs> -b(or --batch_size) <batch_size> --lr < learning_rate> --l1 <l1_regularizer> --l2 <l2_regularizer>*`.  
-It takes the path to circuit board images as a required argument. The rest of the arguments - preceded by either '-' or '--' - are optional arguments followed by their respective values. The default values are the ones mentioned in [dl arch](### Deep Learning architecture). These  hyperparameters gave optimal results out of all the experiments that we conducted. However, the user is free to tune them directly through the command-line.   
+It takes the path to circuit board images as a required argument. The rest of the arguments - preceded by either '-' or '--' - are optional arguments followed by their respective values. The default values are the ones mentioned in [Deep Learning architrecture] (### Deep Learning architecture). These  hyperparameters gave optimal results out of all the experiments that we conducted. However, the user is free to tune them directly through the command-line.   
 #### Preprocessing 
 The preprocessing script generates a CSV file with 'crop-path, label' pairs and saves it in *</path /to/ circuit/ boards>*.  
 It also generates another CSV file 'CURRENT-DATA.csv' that records number of available circuit boards, positives and negatives for the current data. It saves this file in '../results/' folder, relative to the source folder
@@ -72,5 +72,6 @@ https://www.anaconda.com/distribution/
      
 ## Sample results
 Please refer the sample report presenting results for 20 epochs of the network. [report](report_actual.html)
-##References
+
+## References
 [1] K. Simonyan and A. Zisserman, "*Very deep convolutional networks for large-scale image recognition*", In *ICLR*, 2015.

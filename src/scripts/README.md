@@ -21,7 +21,7 @@ l2: 0
 
 The system is divided into three Python modules - preprocessing, training, report_generation - that are sequentially run from the project.sh script
 
-### Run project.sh
+### Running the project
 
 (Should we mention any assumptions about data directory structure before running the code?)
 The project can be run by invoking the following command:  

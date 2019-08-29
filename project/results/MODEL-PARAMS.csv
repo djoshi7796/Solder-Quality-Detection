@@ -1,0 +1,2 @@
+Epochs,Batch size,Learning rate,L1 regularizer,L2 regularizer
+2,32,0.01,0,0

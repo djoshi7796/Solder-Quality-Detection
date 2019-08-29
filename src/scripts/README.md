@@ -25,8 +25,8 @@ The system is divided into three Python modules - preprocessing, training, repor
 
 (Should we mention any assumptions about data directory structure before running the code?)
 The project can be run by invoking the following command:  
-`*chmod +x project*`  
-`*./project </path /to/ circuit/ boards> -e(or --epochs) <epochs> -b(or --batch_size) <batch_size> --lr < learning_rate> --l1 <l1_regularizer> --l2 <l2_regularizer>*`.  
+`chmod +x project`  
+`./project </path /to/ circuit/ boards> -e(or --epochs) <epochs> -b(or --batch_size) <batch_size> --lr < learning_rate> --l1 <l1_regularizer> --l2 <l2_regularizer>`.  
 It takes the path to circuit board images as a required argument. The rest of the arguments - preceded by either '-' or '--' - are optional arguments followed by their respective values. The default values are the ones mentioned [above](### Deep Learning architecture). These  hyperparameters gave optimal results out of all the experiments that we conducted. However, the user is free to tune them directly through the command-line.   
 #### Preprocessing 
 The preprocessing script generates a CSV file with 'crop-path, label' pairs and saves it in *</path /to/ circuit/ boards>*.  

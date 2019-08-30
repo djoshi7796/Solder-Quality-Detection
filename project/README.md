@@ -72,7 +72,7 @@ https://www.anaconda.com/distribution/
 `conda install -c menpo opencv`
      
 ## Sample results
-Please refer the sample [report](report_actual.html) presenting results for 20 epochs of the network.
+Please refer the sample [report](../results/report_actual.html) presenting results for 20 epochs of the network.
 
 ## References
 [1] K. Simonyan and A. Zisserman, "*Very deep convolutional networks for large-scale image recognition*", In *ICLR*, 2015.

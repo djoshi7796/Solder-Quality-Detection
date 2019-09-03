@@ -3,9 +3,9 @@
 ## Overview
 
 ### Introduction
-Quality analysis of printed circuit boards is a task requiring meticulous attention to detail. Manually inspecting circuit boards for defects is not only time-consuming but also prone to human-errors. This project presents an deep-learning based automatic inspection system for detection of solder defects on a printed circuit board. Upon receiving an image of an circuit board, the system partitions it into smaller sub-images and automatically assigns labels to each of them. It attempts to assign a positive label to a sub-image with at least one defective solder and a negative label otherwise. The system is broadly divided into two phases - data preprocessing and model training.  
-### Data Preprocessing  
-
+Quality analysis of printed circuit boards is a task requiring meticulous attention to detail. Manually inspecting circuit boards for defects is not only time-consuming but also prone to human-errors. This project presents an deep-learning based automatic inspection system for detection of solder defects on a printed circuit board. The system generates a dataset with binary labels which is used to train a [Convolutional Neural Network](https://en.wikipedia.org/wiki/Convolutional_neural_network).The network is trained so as to learn the differences between difective and non-defective solders and be able to accurately classify new data into the two groups. The system is broadly divided into two phases - data preprocessing and training the deep learning architecture.  
+### Data Preprocessing 
+As mentioned before, this module generates the dataset that will be used for model training. It accepts circuit board images as input, partitions each of them into smaller sub-images and assigns labels automatically. It assigns a positive label to a sub-image with at least one defective solder and a negative label otherwise.  
 ### Deep Learning architecture 
 The neural network architecture is inspired from the VGGNet16 network [1], an award-winnning entry in the ILSRVC 2014 competition. This network, tested on a 224x224 image, was aimed at improving classification accuracy by increasing the depth. Following the same line of thought, we further increased the depth of VGGNet16 as shown in the figure below, starting with an input image of size 384x384 as shown below:  
 [vggnet16-384](architecture.png)  
@@ -16,20 +16,20 @@ batch_size: 32
 learning_rate: 0.01  
 l1: 0  
 l2: 0  
-  
+where l1 and l2 are [regularization parameters](https://en.wikipedia.org/wiki/Regularization_(mathematics)
 ## Structure
 
-The system is divided into three Python modules - preprocessing, training, report_generation - that are sequentially run from the project.sh script
+The system is divided into three Python modules - preprocessing, training, report_generation - that are sequentially run from the project script found in project/src/  
 
 ### Running the project
 
 (Should we mention any assumptions about data directory structure before running the code?)
-Switch to the src/ directory and run the project by invoking the following commands:  
+Switch to the project/src/ directory and run the project by invoking the following commands:  
 `chmod +x project`  
 `./project </path /to/ circuit/ boards> -e(or --epochs) <epochs> -b(or --batch_size) <batch_size> --lr < learning_rate> --l1 <l1_regularizer> --l2 <l2_regularizer>`.  
-It takes the path to circuit board images as a required argument. The rest of the arguments - preceded by either '-' or '--' - are optional arguments followed by their respective values. The default values are the ones mentioned [above](### Deep Learning architecture). These  hyperparameters gave optimal results out of all the experiments that we conducted. However, the user is free to tune them directly through the command-line.   
+It takes the path to circuit board images as a required argument. The rest of the arguments - preceded by either '-' or '--' - are optional arguments followed by their respective values. The default values are the ones mentioned [above](#deep-learning-architecture). These  hyperparameters gave optimal results out of all the experiments that we conducted. However, the user is free to tune them directly through the command-line.   
 #### Preprocessing 
-The preprocessing script generates a CSV file with 'crop-path, label' pairs and saves it in *</path /to/ circuit/ boards>*.  
+The preprocessing script takes as input, a path to all the circuit board images. Th script assumes that this path contains folders 'F' each of which has sub-folders 'OK' and 'NG'. 'OK' contains defect-free circuit board images while 'NG' has the rest. It crops and labels these images as mentioned [above](#data-preprocessing). It then generates a CSV file with 'crop-path, label' pairs and saves it in *</path /to/ circuit/ boards>*.  
 
 #### Training
 This script takes in the data file, hyperparameters and trains the model. The default train:test split used is 80:20 (should we keep that as command-line argument?). It saves the loss and accuracy history in '../results/results.csv'. It also computes the precision, recall and stores it in 'METRICS.csv' in '../results/'.  
@@ -72,7 +72,7 @@ https://www.anaconda.com/distribution/
 `conda install -c menpo opencv`
      
 ## Sample results
-Please refer the sample [report](../results/report_actual.html) presenting results for 20 epochs of the network.
+Please refer the sample report found in '* ../results/project_report.html*' presenting results for 74 epochs of the network.
 
 ## References
 [1] K. Simonyan and A. Zisserman, "*Very deep convolutional networks for large-scale image recognition*", In *ICLR*, 2015.

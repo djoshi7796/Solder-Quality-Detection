@@ -8,7 +8,7 @@ Quality analysis of printed circuit boards is a task requiring meticulous attent
 As mentioned before, this module generates the dataset that will be used for model training. It accepts circuit board images as input, partitions each of them into smaller sub-images and assigns labels automatically. It assigns a positive label to a sub-image with at least one defective solder and a negative label otherwise.  
 ### Deep Learning architecture 
 The neural network architecture is inspired from the VGGNet16 network [1], an award-winnning entry in the ILSRVC 2014 competition. This network, tested on a 224x224 image, was aimed at improving classification accuracy by increasing the depth. Following the same line of thought, we further increased the depth of VGGNet16 as shown in the figure below, starting with an input image of size 384x384 as shown below:  
-[vggnet16-384](architecture.png)  
+![vggnet16-384](images/architecture.png)  
  The values of hyperparameters are as follows: 
 
 epochs: 74  

@@ -1,13 +1,13 @@
 ## Deep Learning based visual inspection system for identification of defects on a printed circuit board.
 
 ## Structure 
-- # documents  
+- ### documents/  
   Reference papers and/or extracts. 
-- # results
+- ### results/
   Loss, accuracy curves of models and other results of experiments conducted with different conditions
-- # src
+- ### src/
   Jupyter notebooks for the experiments
-- # project 
+- ### project/ 
   Final consolidated script and codes to run the project. This folder also contains the formal documentation pertaining to the project. 
 
 

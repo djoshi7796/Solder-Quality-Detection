@@ -23,13 +23,13 @@ The system is divided into three Python modules - preprocessing, training, repor
 
 ### Running the project
 
-(Should we mention any assumptions about data directory structure before running the code?)
 Switch to the project/src/ directory and run the project by invoking the following commands:  
 `$ chmod +x project`  
-`$ ./project </path /to/ circuit/ boards> -e(or --epochs) <epochs> -b(or --batch_size) <batch_size> --lr < learning_rate> --l1 <l1_regularizer> --l2 <l2_regularizer>`.  
+`$ ./project home/foo/base-path/ -e(or --epochs) <epochs> -b(or --batch_size) <batch_size> --lr < learning_rate> --l1 <l1_regularizer> --l2 <l2_regularizer>`.  
+Here, it is assumed that, *home/foo/base-path/* contains folders, each for a different DATE/. Each of these DATE/ folders contains OK/ or NG/ or both.  
 It takes the path to circuit board images as a required argument. The rest of the arguments - preceded by either '-' or '--' - are optional arguments followed by their respective values. The default values are the ones mentioned in the Deep Learning architecture section above. These  hyperparameters gave optimal results out of all the experiments that we conducted. However, the user is free to tune them directly through the command-line.   
 #### Preprocessing 
-The preprocessing script takes as input, a path to all the circuit board images. Th script assumes that this path contains folders 'F' each of which has sub-folders 'OK' and 'NG'. 'OK' contains defect-free circuit board images while 'NG' has the rest. It crops and labels these images as mentioned in the Data Preprocessing section above. It then generates a CSV file with 'crop-path, label' pairs and saves it in *</path /to/ circuit/ boards>*.  
+The preprocessing script takes as input, a path to all the circuit board images. Th script assumes that this path contains folders 'F' each of which has sub-folders 'OK' and 'NG'. 'OK' contains defect-free circuit board images while 'NG' has the rest. It crops and labels these images as mentioned in the Data Preprocessing section above. It then generates a CSV file with 'crop-path, label' pairs and saves it in *home/foo/base-path* as mentioned above.  
 
 #### Training
 This script takes in the data file, hyperparameters and trains the model. The default train:test split used is 80:20 (should we keep that as command-line argument?). It saves the loss and accuracy history in '../results/results.csv'. It also computes the precision, recall and stores it in 'METRICS.csv' in '../results/'.  

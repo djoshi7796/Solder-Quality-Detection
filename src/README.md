@@ -9,8 +9,9 @@ This paths contains all DATE/ folders, each with OK/ and NG/. It is also assumed
 
 ### Loading data
 
-Cells 3 and 4 are used to load and augment data respectively. Labels are assigned to the images in CELL 5.  
-Running CELL 6 is optional, it saves the numpy arrays to disk, but that is not necessary for the rest of the code. 
+Cells 3 and 4 are used to load and augment data respectively. Labels are assigned to the images in CELL 6.  
+Running CELL 7 is optional, it saves the numpy arrays to disk, but that is not necessary for the rest of the code.  
+CELL 8 splits the data into training and testing. The default ratio is set to 80:20.
 
 ### Training and validation
 
@@ -26,4 +27,8 @@ CELL 15 performs predictions on the test set and displays accuracy, precision, r
 The confusion matrix displayed by the library is a little different than usual. This is the format that it uses:  
 TN | FP  
 .............  
-FN | TP
+FN | TP  
+
+### Running the notebook
+
+Each cell of this notebook can be run individually one after the other. Please note that *CELL 12* needs to be run twice to save the acc and loss results in the csv file. This can be fixed by adding `f.flush()` statement at the end of CELL 12.  

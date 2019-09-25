@@ -32,7 +32,7 @@ In order to run this CELL for a single training and validation session, followin
 ### Display results
 
 Results are saved in the file *../results/results_exp13.csv* file. CELLS 12-14 are used to save and display the loss and accuracy curves. Loss and accuracy curves are saved in *../results/Acc-loss-curves/* 
-CELL 15 performs predictions on the test set and displays accuracy, precision, recall and confusion matrix. (This cell, too, is optional since these calculations are also done in CELL 10)
+CELL 15 performs predictions on the test set and displays accuracy, precision, recall and confusion matrix. (This cell, too, is optional since these calculations are also done in CELL 10). Please ignore the precision, recall and ROC AUC values that are printed just below the Accuracy in the output of CELL 15 as they are incorrect. The correct values are printed at the bottom of the output. 
 
 **Please Note** :  
 The confusion matrix displayed by the library is a little different than usual. This is the format that it uses:  

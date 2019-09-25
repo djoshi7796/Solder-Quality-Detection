@@ -9,7 +9,7 @@ This paths contains all DATE/ folders, each with OK/ and NG/. It is also assumed
 
 ### Loading data
 
-Cells 3 and 4 are used to load and augment data respectively. Labels are assigned to the images in cell 5.  
+Cells 3 and 4 are used to load and augment data respectively. Labels are assigned to the images in CELL 5.  
 Running CELL 6 is optional, it saves the numpy arrays to disk, but that is not necessary for the rest of the code. 
 
 ### Training and validation
@@ -25,5 +25,5 @@ CELL 15 performs predictions on the test set and displays accuracy, precision, r
 **Please Note** :  
 The confusion matrix displayed by the library is a little different than usual. This is the format that it uses:  
 TN | FP  
-.......  
+.............  
 FN | TP

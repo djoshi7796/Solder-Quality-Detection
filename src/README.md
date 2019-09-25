@@ -22,11 +22,12 @@ CELL 11 evaluates predictions on the test data and prints accuracy and loss (Thi
 
 In order to run this CELL for a single training and validation session, following changes need to be made:
 * Comment the for-loop statement while retaining the loop body
-* Everywhere in the loop body, make following changes to variables:
+* Everywhere in the loop body, some variable names need to be changed as follows:
   - `Xdata[train]` -> `Xtrain`
   - `Xdata[val]` -> `Xval`
   - `Ydata[train]` -> `Ytrain`
-  - `Ydata[val]` -> `Yval`
+  - `Ydata[val]` -> `Yval`  
+  The new variable names are defined in CELL 8
 
 ### Display results
 

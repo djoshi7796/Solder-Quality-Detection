@@ -19,7 +19,7 @@ CELL 11 evaluates predictions on the test data and prints accuracy and loss (Thi
 
 ### Display results
 
-Results are saved in the file *../results/results_exp13.csv* file. CELLS 12-14 are used to save and display the loss and accuracy curves.  
+Results are saved in the file *../results/results_exp13.csv* file. CELLS 12-14 are used to save and display the loss and accuracy curves. Loss and accuracy curves are saved in *../results/Acc-loss-curves/* 
 CELL 15 performs predictions on the test set and displays accuracy, precision, recall and confusion matrix. 
 
 **Please Note** :  

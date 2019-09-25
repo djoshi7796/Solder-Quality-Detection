@@ -4,8 +4,8 @@ The code for training is present in Models-EXP13.ipynb. This document gives an o
 
 ### Data path
 
-Cell 2 is used to initialize the data-path, results path and image extension type respectively. The data-path should be something like `home/foo/base-path/'.  
-This paths contains all DATE/ folders, each with OK/ and NG/. It is also assumed that this path contains the csv with labels, and has the name *labels-full-384.csv*
+CELL 2 is used to initialize the data-path, results path and image extension type respectively. The data-path should be something like `home/foo/base-path/`.  
+This paths contains all DATE/ folders, each with OK/ and NG/. It is also assumed that this path contains the csv with labels, and has the name **labels-full-384.csv**
 
 ### Loading data
 
@@ -19,11 +19,11 @@ CELL 11 evaluates predictions on the test data and prints accuracy and loss (Thi
 
 ### Display results
 
-Results are saved in the file ** ../results/results_exp13.csv ** file. CELLS 12-14 are used to save and display the loss and accuracy curves.  
+Results are saved in the file *../results/results_exp13.csv* file. CELLS 12-14 are used to save and display the loss and accuracy curves.  
 CELL 15 performs predictions on the test set and displays accuracy, precision, recall and confusion matrix. 
 
-* Please Note * :  
+**Please Note** :  
 The confusion matrix displayed by the library is a little different than usual. This is the format that it uses:  
 TN | FP  
--------  
+.......  
 FN | TP

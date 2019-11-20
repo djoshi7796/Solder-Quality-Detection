@@ -68,7 +68,7 @@ https://www.anaconda.com/distribution/
 `$ conda install pandas`  
 `$ conda install -c conda-forge matplotlib`  
 `$ conda install scipy`  
-`$ conda install sklearn`  
+`$ conda install scikit-learn`  
 `$ conda install -c menpo opencv`
      
 ## Sample results
